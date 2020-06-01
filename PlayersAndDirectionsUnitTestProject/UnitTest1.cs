@@ -78,5 +78,56 @@ namespace PlayersAndDirectionsUnitTestProject
 
             Assert.AreEqual(1500, pl1.getScore());
         }
+
+
+
+        [TestMethod]
+        public void HumanPlayerTestMethod1()
+        {
+            HumanPlayer pl1 = new HumanPlayer(1, "iskormovaca", 5, 4, 500, HumanPlayer.directions.E);
+
+            Assert.AreEqual(HumanPlayer.directions.E, pl1.getFacing());
+        }
+
+        [TestMethod]
+        public void HumanPlayerTestMethod2()
+        {
+            HumanPlayer pl1 = new HumanPlayer(1, "iskormovaca", 5, 4, 500, HumanPlayer.directions.E);
+
+            pl1.turnLeft();
+
+            Assert.AreEqual(HumanPlayer.directions.N, pl1.getFacing());
+        }
+
+        [TestMethod]
+        public void HumanPlayerTestMethod3()
+        {
+            HumanPlayer pl1 = new HumanPlayer(1, "iskormovaca", 5, 4, 500, HumanPlayer.directions.E);
+
+            pl1.turnLeft(); pl1.turnLeft(); pl1.turnLeft(); pl1.turnLeft();
+
+            Assert.AreEqual(HumanPlayer.directions.E, pl1.getFacing());
+        }
+
+        [TestMethod]
+        public void HumanPlayerTestMethod4()
+        {
+            HumanPlayer pl1 = new HumanPlayer(1, "iskormovaca", 5, 4, 500, HumanPlayer.directions.E);
+
+            pl1.turnRight();
+
+            Assert.AreEqual(HumanPlayer.directions.S, pl1.getFacing());
+        }
+
+        [TestMethod]
+        public void HumanPlayerTestMethod5()
+        {
+            HumanPlayer pl1 = new HumanPlayer(1, "iskormovaca", 5, 4, 500, HumanPlayer.directions.E);
+
+            pl1.turnRight(); pl1.turnRight(); pl1.turnRight(); pl1.turnLeft();
+
+            Assert.AreEqual(HumanPlayer.directions.W, pl1.getFacing());
+        }
+
     }
 }
