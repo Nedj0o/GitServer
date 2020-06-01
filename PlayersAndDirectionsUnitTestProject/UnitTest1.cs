@@ -129,5 +129,22 @@ namespace PlayersAndDirectionsUnitTestProject
             Assert.AreEqual(HumanPlayer.directions.W, pl1.getFacing());
         }
 
+        [TestMethod]
+        public void ComputerPlayerTestMethod1()
+        {
+            ComputerPlayer pl1 = new ComputerPlayer(1, "lenovo", 5, 4, 500);
+            pl1.findNextMove();
+
+            Assert.AreNotEqual(5, pl1.getxPos());
+        }
+
+        [TestMethod]
+        public void ComputerPlayerTestMethod2()
+        {
+            ComputerPlayer pl1 = new ComputerPlayer(1, "lenovo", 5, 4, 500);
+            pl1.findNextMove();
+
+            Assert.AreNotEqual(4, pl1.getyPos());
+        }
     }
 }
